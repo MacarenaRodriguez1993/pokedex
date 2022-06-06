@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ComponentsComponent } from './components/components.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import{HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { DetallesPokemonComponent } from './components/detalles-pokemon/detalles-pokemon.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
     HeaderComponent,
     MainComponent,
     FooterComponent,
-    ComponentsComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    DetallesPokemonComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

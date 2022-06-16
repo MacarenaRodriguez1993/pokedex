@@ -13,7 +13,7 @@
 
     <div class="row">
         
-        <div class="card" *ngFor="let poke of data">
+        <div class="card" *ngFor="let poke of data" (click)= "verDetalles(poke.id)">
         
             <h5>#{{poke.id}}</h5>
             <h2>{{poke.name}}</h2>

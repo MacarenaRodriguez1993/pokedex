@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { pokemon } from 'src/app/model/pokemons';
 import { PokedexService } from 'src/app/services/pokedex.service';
 
@@ -13,7 +14,8 @@ export class MainComponent implements OnInit {
   data:any[]=[];
   pokemon=[];
   
-  constructor(private pokeServicio:PokedexService) { }
+  constructor(private pokeServicio:PokedexService,
+              private router:Router) { }
   
   ngOnInit(): void {
     this.traerPokemon();
@@ -33,6 +35,9 @@ export class MainComponent implements OnInit {
         console.log(pokeData)
       });
     }
+  }
+  verDetalles(id:number){
+    this.router.navigate(['detalles',id]);
   }
 
 }

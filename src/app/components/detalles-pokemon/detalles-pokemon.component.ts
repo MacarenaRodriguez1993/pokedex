@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PokedexService } from 'src/app/services/pokedex.service';
 
 @Component({
@@ -8,22 +9,29 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 })
 export class DetallesPokemonComponent implements OnInit {
 
-  name!: String;
-  urlImagen!: string;
-  specie!: String;
+  id:number;
+  pokemons:any;
+  pokeimagen:String='';
 
-  constructor(private pokeServicio:PokedexService) { }
 
+  constructor(private pokeServicio:PokedexService,
+              private router:Router,
+              private Actived:ActivatedRoute) { 
+                this.Actived.params.subscribe(
+                  params=>{
+                    this.getPokemon(params['id']);
+                  }
+                );
+              }
   ngOnInit(): void {
-    
+
   }
 
-  verDetalles(){
-    this.pokeServicio.getPokemonPorNombre(this.name).subscribe(data => {
-      this.urlImagen=data.sprites.front_default;
-      this.name=data.name;
-      this.specie=data.species.name;
-    });
+  getPokemon(id:number){
+    this.pokeServicio.getPokemon(id).subscribe(
+      resp=>{
+        this.pokemons=resp;
+      }
+    )
   }
-
 }

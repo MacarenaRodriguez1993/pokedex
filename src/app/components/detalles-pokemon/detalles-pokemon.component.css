@@ -1,10 +1,17 @@
+div{
+    display: flex;
+    justify-content: space-between;
+}
+img{
+    width: 70%;
+    margin-left: 2em;
+}
 .card{
-    width: 80vw;
+    width: 50vw;
     background-color: #ece925;
     display: flex;
     justify-content:center;
     align-items: center;
-    height: 50vw;
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
@@ -13,11 +20,8 @@
     margin: 10px;
     color: black;
 }
-.card:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+h1{
+    justify-content: start;
 }
-.row{
-    display: flex;
-    justify-content: space-between;
-}
+
+

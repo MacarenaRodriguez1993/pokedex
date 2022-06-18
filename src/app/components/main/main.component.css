@@ -27,7 +27,23 @@
     margin: 10px;
     color: black;
 }
-.card:hover{
+button{
+    transition: 0.5s;
+}
+.favo{
+    display: flex;
+    align-items: center;
+}
+.id_poke{
+    justify-content: space-between;
+    margin-right: 20px;
+}
+svg{
+    margin-top:-2px;
+    width: 55%;
+    height: 55%;
+}
+button:hover{
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }

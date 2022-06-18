@@ -6,6 +6,12 @@
             <h2>{{pokemons.name}}</h2>
             <img src="{{pokemons.sprites.front_default}}" alt="pokemon">
         </div>
+        <div class="row" id="stats" *ngFor="let i of [0,1,2,3,4,5]">
+            <div id="info" >
+                <h3>{{pokemons.stats[i].stat.name}}----</h3>
+                <h3>{{pokemons.stats[i].base_stat}} %</h3>
+            </div>
+        </div>
         
     </div>
 </div>

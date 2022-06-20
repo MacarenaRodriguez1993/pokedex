@@ -3,14 +3,12 @@
     display:flex;
     justify-content: center;
     margin: 15px;
+    align-items: center;
 }
 .row{
     display: flex;
     justify-content: center;
 }
-
-
-
 .card{
     
     width: 200px;
@@ -38,10 +36,13 @@ button{
     justify-content: space-between;
     margin-right: 20px;
 }
-svg{
+#like{
     margin-top:-2px;
     width: 55%;
     height: 55%;
+}
+#contador{
+  margin-left: 5px;
 }
 button:hover{
     transform: translateY(-10px);
@@ -50,4 +51,5 @@ button:hover{
 img{
     width: 80%;
 }
+
 

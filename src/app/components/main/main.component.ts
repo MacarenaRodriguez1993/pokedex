@@ -13,17 +13,22 @@ export class MainComponent implements OnInit {
   json:String[]=['id','name','imagen'];
   data:any[]=[];
   pokemon=[];
+  pages:number=1;
+  contador:number=0;
   
   constructor(private pokeServicio:PokedexService,
-              private router:Router) { }
+              private router:Router) { 
+          
+  }
   
+  filterPoke=[];
   ngOnInit(): void {
     this.traerPokemon();
   }
 
   traerPokemon(){
     let pokeData;
-    for(let i = 1; i<=150; i++){ 
+    for(let i = 1; i<=50; i++){ 
       this.pokeServicio.getPokemon(i).subscribe(resp=>{
         pokeData = {
           id: i,
@@ -31,13 +36,15 @@ export class MainComponent implements OnInit {
           imagen:resp.sprites.front_default
         };
         this.data.push(pokeData);
-        console.log(resp);
-        console.log(pokeData)
+       
       });
     }
   }
   verDetalles(id:number){
     this.router.navigate(['detalles',id]);
   }
-
+  
+  like(){
+    this.contador++;
+  }
 }

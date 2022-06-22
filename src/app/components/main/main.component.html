@@ -15,7 +15,6 @@
     </div>
 
     <div class="row">
-
         <div class="card" *ngFor="let poke of data | filter:filterPoke | paginate:{itemsPerPage: 12, currentPage: pages}">
             <div class="favo">
                 <h5 class="id_poke">#{{poke.id}}</h5>

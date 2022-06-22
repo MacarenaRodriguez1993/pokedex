@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { pokemon } from 'src/app/model/pokemons';
+
 import { PokedexService } from 'src/app/services/pokedex.service';
 
 @Component({
@@ -10,13 +10,10 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 })
 export class MainComponent implements OnInit {
   
-  json:String[]=['id','name','imagen'];
   data:any[]=[];
   pokemon:any[]=[];
   pages:number=1;
   contador:number=0;
-  modalSwitch:boolean;
-  cora:boolean=false;
   
   constructor(private pokeServicio:PokedexService,
               private router:Router) { 
@@ -51,14 +48,12 @@ export class MainComponent implements OnInit {
         this.contador--;
       }
     }
-    
     this.pokemon.push(this.data[indice-1]);
   }
 
   eliminar(indice:number){
     for(let i=0;i<this.pokemon.length;i++){
       if(this.pokemon[i].id==indice){
-        //console.log(this.pokemon[i]);
         this.pokemon.splice(i,1);
         this.contador--;
       }

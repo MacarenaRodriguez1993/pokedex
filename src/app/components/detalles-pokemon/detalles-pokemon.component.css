@@ -23,5 +23,15 @@ img{
 h1{
     justify-content: start;
 }
+button{
+    background: none;
+    border-color: black;
+    border-radius: 5px;
+    align-self: start;
+    margin-left:15px;
+    margin-bottom: 7px;
+    
+}
+
 
 

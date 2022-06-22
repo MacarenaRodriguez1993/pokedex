@@ -25,6 +25,12 @@
     margin: 10px;
     color: black;
 }
+input{
+    background-color: black;
+}
+.modal{
+    color: black;
+}
 button{
     transition: 0.5s;
 }
@@ -36,14 +42,29 @@ button{
     justify-content: space-between;
     margin-right: 20px;
 }
+
+.modal-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-body h1{
+    margin-left: -100px;
+}
 #like{
     margin-top:-2px;
     width: 55%;
     height: 55%;
 }
+#imagenFavo{
+    width: 20%;
+}
 #contador{
   margin-left: 5px;
+  background: none;
+  border: none;
 }
+
 button:hover{
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);

@@ -34,4 +34,7 @@ export class DetallesPokemonComponent implements OnInit {
       }
     )
   }
+  volver(){
+    this.router.navigate(['/home']);
+  }
 }

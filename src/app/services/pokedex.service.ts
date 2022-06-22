@@ -15,7 +15,6 @@ export class PokedexService {
     return this.http.get<any>(`${this.baseUrl}/${index}`);
   }
 
-  getPokemonPorNombre(name:String){
-    return this.http.get<any>(`${this.baseUrl}/${name}`);
-  }
+
+ 
 }

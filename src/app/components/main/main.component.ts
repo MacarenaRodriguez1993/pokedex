@@ -12,20 +12,20 @@ export class MainComponent implements OnInit {
   
   json:String[]=['id','name','imagen'];
   data:any[]=[];
-  pokemon=[];
+  pokemon:any[]=[];
   pages:number=1;
   contador:number=0;
+  modalSwitch:boolean;
+  cora:boolean=false;
   
   constructor(private pokeServicio:PokedexService,
               private router:Router) { 
           
   }
-  
   filterPoke=[];
   ngOnInit(): void {
     this.traerPokemon();
   }
-
   traerPokemon(){
     let pokeData;
     for(let i = 1; i<=50; i++){ 
@@ -36,7 +36,6 @@ export class MainComponent implements OnInit {
           imagen:resp.sprites.front_default
         };
         this.data.push(pokeData);
-       
       });
     }
   }
@@ -44,7 +43,25 @@ export class MainComponent implements OnInit {
     this.router.navigate(['detalles',id]);
   }
   
-  like(){
+  like(indice:number){
     this.contador++;
+    for(let i=0;i<this.pokemon.length;i++){
+      if(this.pokemon[i].id==indice){
+        this.pokemon.splice(i,1);
+        this.contador--;
+      }
+    }
+    
+    this.pokemon.push(this.data[indice-1]);
+  }
+
+  eliminar(indice:number){
+    for(let i=0;i<this.pokemon.length;i++){
+      if(this.pokemon[i].id==indice){
+        //console.log(this.pokemon[i]);
+        this.pokemon.splice(i,1);
+        this.contador--;
+      }
+    } 
   }
 }

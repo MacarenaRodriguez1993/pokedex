@@ -26,6 +26,8 @@
     color: black;
 }
 input{
+    width: 200px;
+    height: 50px;
     background-color: black;
     color:aliceblue
 }
@@ -42,6 +44,11 @@ button{
 .id_poke{
     justify-content: space-between;
     margin-right: 20px;
+}
+
+.modal-content{
+    background-color: rgb(43, 42, 42);
+    color:aliceblue;
 }
 
 .modal-body{
@@ -64,6 +71,9 @@ button{
   margin-left: 5px;
   background: none;
   border: none;
+  width: 70px;
+  height: 60px;
+  border-radius: 60%;
 }
 
 button:hover{

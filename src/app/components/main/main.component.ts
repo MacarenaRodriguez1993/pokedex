@@ -14,7 +14,7 @@ export class MainComponent implements OnInit {
   pokemon:any[]=[];
   pages:number=1;
   contador:number=0;
-  
+  cora:boolean=false;
   constructor(private pokeServicio:PokedexService,
               private router:Router) { 
           
@@ -46,9 +46,17 @@ export class MainComponent implements OnInit {
       if(this.pokemon[i].id==indice){
         this.pokemon.splice(i,1);
         this.contador--;
+        console.log("holamundo");
+        this.cora=true;
       }
     }
+    
     this.pokemon.push(this.data[indice-1]);
+    if(this.cora==true){
+      this.pokemon.pop();
+      this.contador--;
+      this.cora=false;
+    }
   }
 
   eliminar(indice:number){

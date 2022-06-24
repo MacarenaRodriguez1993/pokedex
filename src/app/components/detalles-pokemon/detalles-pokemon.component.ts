@@ -31,6 +31,7 @@ export class DetallesPokemonComponent implements OnInit {
     this.pokeServicio.getPokemon(id).subscribe(
       resp=>{
         this.pokemons=resp;
+        console.log(this.pokemons);
       }
     )
   }

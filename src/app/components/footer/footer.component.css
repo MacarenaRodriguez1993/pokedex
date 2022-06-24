@@ -4,4 +4,30 @@ div{
 }
 p{
     margin: 15px;
+    
+}
+a{
+    margin: 15px;
+    margin-right: 0px;
+    color:aliceblue;
+    cursor: pointer;
+    transition: 0.8s;
+}
+a:hover{
+   transform: translateY(-10px);
+    box-shadow: 5px 5px 15px #e9e16f;
+}
+img{
+    width: 25px;
+}
+
+@media (max-width: 576px) {
+    #footer{
+        display: block;
+        text-align: center;
+    }
+    #copyright{
+        display: block;
+        text-align: center;
+    }
 }

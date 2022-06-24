@@ -14,12 +14,13 @@ export class MainComponent implements OnInit {
   pokemon:any[]=[];
   pages:number=1;
   contador:number=0;
-  cora:boolean=false;
+  filterPoke=[];
+ 
   constructor(private pokeServicio:PokedexService,
               private router:Router) { 
           
   }
-  filterPoke=[];
+  
   ngOnInit(): void {
     this.traerPokemon();
   }
@@ -30,40 +31,40 @@ export class MainComponent implements OnInit {
         pokeData = {
           id: i,
           name:resp.name,
-          imagen:resp.sprites.front_default
+          imagen:resp.sprites.front_default,
+          cora: false
         };
         this.data.push(pokeData);
       });
     }
+    console.log(this.data);
   }
   verDetalles(id:number){
     this.router.navigate(['detalles',id]);
   }
   
   like(indice:number){
+   if(this.data[indice-1].cora==false){
     this.contador++;
+    this.data[indice-1].cora=true;
+    this.pokemon.push(this.data[indice-1]);
+   }
+   else{
+    this.contador--;
+    this.data[indice-1].cora=false;
     for(let i=0;i<this.pokemon.length;i++){
-      if(this.pokemon[i].id==indice){
+      if(this.pokemon[i].id==(indice)){
         this.pokemon.splice(i,1);
-        this.contador--;
-        console.log("holamundo");
-        this.cora=true;
       }
     }
-    
-    this.pokemon.push(this.data[indice-1]);
-    if(this.cora==true){
-      this.pokemon.pop();
-      this.contador--;
-      this.cora=false;
-    }
+   }
   }
-
   eliminar(indice:number){
     for(let i=0;i<this.pokemon.length;i++){
       if(this.pokemon[i].id==indice){
         this.pokemon.splice(i,1);
         this.contador--;
+        this.data[indice-1].cora=false;
       }
     } 
   }

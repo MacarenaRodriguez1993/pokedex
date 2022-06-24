@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class PokedexService {
 
-  baseUrl=environment.baseUrl;
+  baseUrl='https://pokeapi.co/api/v2/pokemon';
  
   constructor(private http:HttpClient) { }
 

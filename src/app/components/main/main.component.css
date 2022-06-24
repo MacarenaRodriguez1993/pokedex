@@ -10,7 +10,6 @@
     justify-content: center;
 }
 .card{
-    
     width: 200px;
     background-color: #ece925;
     display: flex;
@@ -59,14 +58,11 @@ button{
 .modal-body h1{
     margin-left: -100px;
 }
-#like{
-    margin-top:-2px;
-    width: 55%;
-    height: 55%;
-}
+
 #imagenFavo{
     width: 20%;
 }
+
 #contador{
   margin-left: 5px;
   background: none;
@@ -75,13 +71,19 @@ button{
   height: 60px;
   border-radius: 60%;
 }
-
-button:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+#botonLike{
+    background-color: #ece925;
+    border: none;
+    font-size: x-large;
 }
+
 img{
     width: 80%;
+}
+@media (max-width: 576px) {
+    .card{
+        width: 180px;
+    }
 }
 
 

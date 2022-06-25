@@ -26,7 +26,8 @@ export class MainComponent implements OnInit {
   }
   traerPokemon(){
     let pokeData;
-    for(let i = 1; i<=50; i++){ 
+   
+    for(let i = 1; i<=150; i++){ 
       this.pokeServicio.getPokemon(i).subscribe(resp=>{
         pokeData = {
           id: i,
@@ -34,10 +35,24 @@ export class MainComponent implements OnInit {
           imagen:resp.sprites.front_default,
           cora: false
         };
+       
         this.data.push(pokeData);
+        
+        //ORDENAMOS ARRAY
+        this.data.sort((id1, id2) => {
+          if(id1.id < id2.id){
+            return -1;
+          }
+          else if (id1.id > id2.id){
+            return 1;
+          }
+          else{
+            return 0;
+          }
+        });
+        
       });
     }
-    console.log(this.data);
   }
   verDetalles(id:number){
     this.router.navigate(['detalles',id]);

@@ -1,10 +1,9 @@
 div{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 p{
     margin: 15px;
-    
 }
 a{
     margin: 15px;
@@ -22,10 +21,7 @@ img{
 }
 
 @media (max-width: 576px) {
-    #footer{
-        display: block;
-        text-align: center;
-    }
+   
     #copyright{
         display: block;
         text-align: center;
